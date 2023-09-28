@@ -13,10 +13,10 @@ palabra_dos = input("Ingrese la segunda Palabra: ")
 def anagrama(palabra_uno, palabra_dos):
     #Verificar que las 2 entradas sean str.
     if isinstance(palabra_uno, str) and isinstance(palabra_dos, str):
-        #Elimina los espacios en blanco delante y detras de la cadena de texto.
-        palabra_uno = palabra_uno.strip()
-        palabra_dos = palabra_dos.strip()
-    
+        #Elimina los espacios en blanco delante y detras de la cadena de texto. Tambien convierte el texto a minusculas para evitar errores de entrada entre mayusculas y minusculas
+        palabra_uno = palabra_uno.replace(" ", "").strip().lower()
+        palabra_dos = palabra_dos.replace(" ", "").strip().lower()
+
     if palabra_uno and palabra_dos: #Verifica que sean cadenas no vacias de texto
         if sorted(palabra_uno) == sorted(palabra_dos): #Ordena las palabraas alfabeticamente y las compara
             return True #Si son anagramas devuelve Trues
